@@ -1,4 +1,7 @@
 "use strict";
+var playerHandValue = 0, dealerHandValue = 0;
+
+var output = document.querySelector('#output');
 var fireEvent = function( eventName, data) {
 	if (window.CustomEvent) {
 	  var event = new CustomEvent(eventName, {detail: data});
@@ -6,10 +9,12 @@ var fireEvent = function( eventName, data) {
 	  var event = document.createEvent('CustomEvent');
 	  event.initCustomEvent(eventName, true, true, data);
 	}
-
 	document.querySelector('body').dispatchEvent(event);
 }
 
+var bindEvent = function (eventName, callback) {
+	document.querySelector('body').addEventListener(eventName, callback);
+}
 
 var getName = function (value) {
 	var name;
@@ -90,10 +95,14 @@ var deal = document.getElementById('deal');
 var hit = document.querySelector('#hit');	
 var deck;
 
+var stand = document.querySelector('#stand');
 
-deal.addEventListener('click', function (e) {
+var dealTheCards = function (e) {
+	if (e) {
+		e.preventDefault();
+	}
+	output.innerHTML =  '';
 
-	e.preventDefault();
 	dealer = [], player = [];
 	dealerOut.innerHTML = '';
 	playerOut.innerHTML = '';
@@ -115,7 +124,31 @@ deal.addEventListener('click', function (e) {
 	dealerOut.innerHTML = '<img src="'+ dealer[0].img + '" />' +  '<img src="'+ dealer[1].img + '" />';
 	playerOut.innerHTML = '<img src="'+ player[0].img + '" />' +  '<img src="'+ player[1].img + '" />';
 
-});
+};
+
+
+deal.addEventListener('click', dealTheCards);
+
+var calculateScore = function (hand) {
+	var score = 0;
+	var hasAce = false;
+	hand.forEach(function (card) {
+		if (card.val === 1) {
+			hasAce = true;
+			score = score + 11;
+		}
+		if (card.val > 10) {
+			score = score + 10;
+		} else {
+			score = score + card.val;
+		}
+	});
+	if (score > 21 && hasAce) {
+		score = score - 10;
+	}
+	console.log(score);
+	return score;
+}
 
 hit.addEventListener('click', function (e) {
 	e.preventDefault();
@@ -129,6 +162,62 @@ hit.addEventListener('click', function (e) {
 		html.push('<img src="'+ player[i].img + '" />');
 	};
 	playerOut.innerHTML =  html.join('');
+
+ 	var score = calculateScore(player);
+ 	if (score > 21) {
+ 		output.innerHTML = "<h1>BUSTED!!</h1>";
+ 		//setTimeout(dealTheCards, 4000);
+ 	}
+
+
+
+});
+var hitDealer = function () {
+	dealer.push(deck.pop());
+	var html = [];
+	for (var i = 0; i < dealer.length; i++) {
+		html.push('<img src="'+ dealer[i].img + '" />');
+	};
+	dealerOut.innerHTML =  html.join('');
+};
+
+
+stand.addEventListener('click', function (e) {
+	e.preventDefault();
+
+	console.log('hit me!!');
+	var playerScore = calculateScore(player);
+	
+
+	if (calculateScore(dealer) <= playerScore) {
+		hitDealer();
+	}
+
+	if (calculateScore(dealer) <= playerScore) {
+		hitDealer();
+	}
+	if (calculateScore(dealer) <= playerScore) {
+		hitDealer();
+	}
+	var dealerScore = calculateScore(dealer);
+ 
+
+ 	var score = calculateScore(player);
+ 	console.log(score);
+ 	console.log(dealerScore)
+ 	if (score < 22 && dealerScore > 21) {
+ 		output.innerHTML = "<h1>You Win - Dealer busted ?!</h1>";
+ 	} else if (score > dealerScore  && score < 22) {
+ 		output.innerHTML = "<h1>YOU WIN!!</h1>";
+ 		//setTimeout(dealTheCards, 4000);
+ 	} else if (score === dealerScore){
+ 		 		output.innerHTML = "<h1>PUSH!</h1>";
+ 		//setTimeout(dealTheCards, 4000);
+ 	} else  {
+ 		 		output.innerHTML = "<h1>You Lose ?!</h1>";
+ 		//setTimeout(dealTheCards, 4000);
+ 	} 
+
 
 
 });

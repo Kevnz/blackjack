@@ -2,6 +2,10 @@
 <html>
   <head>
     <title><%= title %></title>
+            <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="cleartype" content="on">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
@@ -11,10 +15,13 @@
     <div id="output"></div>
     <div id="dealer"></div>
     <div id="player"></div>
-    <button id="shuffle">Shuffle</button>
-    <button id="deal">Deal</button>
-    <button id="debug">DEBUG</button>
-    <button id="hit">Hit Me!</button>
+    <button id="shuffle" class="pure-button">Shuffle</button>
+    <button id="deal" class="pure-button">Deal</button>
+    <button id="hit" class="pure-button"> Hit Me! </button>
+    <button id="stand" class="pure-button"> Stand! </button>
+
+    <br />
+    <button id="debug" class="pure-button">DEBUG</button>
     <script type="text/javascript" src="/js/blackjack.js"></script>
     <!-- Live reload script -->
     <script type="text/javascript" src="http://localhost:35729/livereload.js"></script>
