@@ -65,3 +65,12 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+
+/*
+
+var primus = new Primus(server, { transformer: 'websockets' });
+var Socket = primus.Socket
+  , socket = new Socket('url');
+  
+*/
