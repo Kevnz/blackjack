@@ -6,26 +6,27 @@
     "start": "node ./bin/www"
   },
   "devDependencies": {
-    "gulp": "3.8.8"
-    ,"bower": "latest"
-    ,"gulp-nodemon": "latest"
-    ,"gulp-watch": "~0.6.4"
-    ,"gulp-jshint": "latest",
-    "gulp-livereload": "^1.5.0"
+    "bower": "latest",
+    "browserify": "^7.0.0",
+    "gulp": "3.8.8",
+    "gulp-jshint": "latest",
+    "gulp-livereload": "^1.5.0",
+    "gulp-nodemon": "latest",
+    "gulp-watch": "~0.6.4",
+    "reactify": "^0.17.1"
   },
   "dependencies": {
-    "express": "~4.0.0"
-    ,"static-favicon": "~1.0.0"
-    ,"morgan": "~1.0.0"
-    ,"cookie-parser": "~1.0.1"
-    ,"body-parser": "~1.0.0"
-    ,"debug": "~0.7.4"
-    
-    
-    
-    , "ejs": "~0.8.5"
-    
-    
-    
+    "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "debug": "~0.7.4",
+    "ejs": "~0.8.5",
+    "express": "~4.0.0",
+    "immstruct": "^1.2.0",
+    "morgan": "~1.0.0",
+    "omniscient": "^2.1.0",
+    "primus": "^2.4.11",
+    "react": "^0.12.1",
+    "static-favicon": "~1.0.0",
+    "ws": "^0.5.0"
   }
 }
