@@ -6,14 +6,19 @@
     "start": "node ./bin/www"
   },
   "devDependencies": {
-    "bower": "latest",
     "browserify": "^7.0.0",
     "gulp": "3.8.8",
     "gulp-jshint": "latest",
     "gulp-livereload": "^1.5.0",
     "gulp-nodemon": "latest",
     "gulp-watch": "~0.6.4",
-    "reactify": "^0.17.1"
+    "reactify": "^0.17.1",
+    "gulp": "3.8.8",
+    "bower": "latest",
+    "gulp-nodemon": "latest",
+    "gulp-watch": "~0.6.4",
+    "gulp-jshint": "latest",
+    "gulp-livereload": "^1.5.0"
   },
   "dependencies": {
     "body-parser": "~1.0.0",
@@ -26,6 +31,11 @@
     "omniscient": "^2.1.0",
     "primus": "^2.4.11",
     "react": "^0.12.1",
+    "levelup": "^0.19.0",
+    "mongodown": "^1.0.1",
+    "morgan": "~1.0.0",
+    "primus": "^2.4.11",
+    "socksjs": "^0.4.5",
     "static-favicon": "~1.0.0",
     "ws": "^0.5.0"
   }
