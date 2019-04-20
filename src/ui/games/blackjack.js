@@ -13,16 +13,28 @@ const Deck = ({ hand }) => {
     <img key={`${card.name}-${card.suit}`} src={`${card.img}`} alt="" />
   ))
 }
+const GAME_STATE = {
+  WAITING: 'WAITING',
+  PLAYING: 'PLAYING',
+  DEALT: 'DEALT',
+  PLAYER_BUSTED: 'PLAYER_BUSTED',
+  PLAYER_STAND: 'PLAYER_STAND',
+  DEALER_BUSTED: 'DEALER_BUSTED',
+  WINNER_PLAYER: 'WINNER_PLAYER',
+  WINNER_DEALER: 'WINNER_DEALER',
+  PUSH: 'PUSH',
+  DONE: 'DONE',
+}
 
 export default () => {
   const [output, setOutput] = useState('')
+  const [gameState, setGameState] = useState(GAME_STATE.WAITING)
   const [total, setTotal] = useState(0)
   const [cards, setCards] = useState({ player: [], dealer: [], deck: [] })
 
   useEffect(() => {
     const cardDeck = buildDeck()
     cardDeck.forEach(card => {
-      // eslint-disable-next-line no-undef
       const img = new Image()
       img.src = card.src
     })
@@ -43,43 +55,56 @@ export default () => {
           You: {playerScore} vs Dealer: {dealerScore}
         </div>
         <div>{output}</div>
-        <div>{DealerDeck}</div>
-        <div>{PlayerDeck}</div>
+        <div>
+          <Deck hand={cards.dealer} />
+        </div>
+        <div>
+          <Deck hand={cards.player} />
+        </div>
         <Button
           onClick={e => {
             e.preventDefault()
-            console.log(e)
+
             const { dealer, player, deck } = dealTheCardsOut()
-            console.log('Done')
+
             setCards({
               dealer,
               player,
               deck,
             })
+            setGameState(GAME_STATE.DEALT)
             setOutput('')
           }}
         >
           Shuffle
         </Button>
         <Button
+          disabled={cards.deck.length < 10}
           onClick={e => {
             e.preventDefault()
-            console.log(e)
 
             const { dealer, player, deck } = dealTheCardsOut(cards.deck)
-            console.log('DDEAL')
+
             setCards({
               dealer,
               player,
               deck,
             })
-            setOutput('play')
+            setOutput('Cards have been dealt')
+            setGameState(GAME_STATE.DEALT)
           }}
         >
           Deal
         </Button>
         <Button
-          disabled={playerScore === 21}
+          disabled={
+            gameState === GAME_STATE.PLAYER_STAND ||
+            gameState === GAME_STATE.PLAYER_BUSTED ||
+            gameState === GAME_STATE.PUSH ||
+            gameState === GAME_STATE.DONE ||
+            playerScore >= 21 ||
+            cards.deck.length === 0
+          }
           onClick={e => {
             e.preventDefault()
             const { hand, score, deck } = handleHit(cards.player, cards.deck)
@@ -92,6 +117,7 @@ export default () => {
             })
             if (score > 21) {
               setOutput('busted')
+              setGameState(GAME_STATE.DONE)
             }
           }}
         >
@@ -99,6 +125,11 @@ export default () => {
           Hit Me!{' '}
         </Button>
         <Button
+          disabled={
+            gameState === GAME_STATE.PLAYER_STAND ||
+            cards.deck.length === 0 ||
+            gameState === GAME_STATE.DONE
+          }
           onClick={e => {
             e.preventDefault()
             console.info('cards', cards)
@@ -115,7 +146,12 @@ export default () => {
             })
             console.log('set out', reason)
             if (winner === 'player') {
+              setGameState(GAME_STATE.DONE)
               setTotal(total + 1)
+            } else if (winner === 'dealer') {
+              setGameState(GAME_STATE.DONE)
+            } else {
+              setGameState(GAME_STATE.DONE)
             }
             setOutput(reason)
           }}
