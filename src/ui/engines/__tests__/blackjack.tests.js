@@ -118,6 +118,8 @@ describe('The blackjack engine', () => {
 
     expect(result.winner).toBe('dealer')
     expect(result.reason).toBe('You lost')
-    expect(deck.length).toBe(2)
+    expect(result.player.length).toBe(2)
+    expect(result.dealer.length).toBe(4)
+    expect(result.deck.length).toBe(2)
   })
 })

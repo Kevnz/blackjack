@@ -99,6 +99,9 @@ export function playerStand(player, dealer, deck) {
 
   if (playerScore < 22 && dealerScore > 21) {
     return {
+      player,
+      dealer,
+      deck,
       winner: 'player',
       dealerScore,
       playerScore,
@@ -106,6 +109,9 @@ export function playerStand(player, dealer, deck) {
     }
   } else if (playerScore > dealerScore && playerScore < 22) {
     return {
+      player,
+      dealer,
+      deck,
       winner: 'player',
       dealerScore,
       playerScore,
@@ -113,6 +119,9 @@ export function playerStand(player, dealer, deck) {
     }
   } else if (playerScore === dealerScore) {
     return {
+      player,
+      dealer,
+      deck,
       winner: '-',
       dealerScore,
       playerScore,
@@ -120,6 +129,9 @@ export function playerStand(player, dealer, deck) {
     }
   } else {
     return {
+      player,
+      dealer,
+      deck,
       winner: 'dealer',
       dealerScore,
       playerScore,
