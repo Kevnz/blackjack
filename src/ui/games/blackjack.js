@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Button } from 'react-form-elements'
 import {
+  buildDeck,
   dealTheCardsOut,
   handleHit,
   playerStand,
@@ -12,11 +13,20 @@ const Deck = ({ hand }) => {
     <img key={`${card.name}-${card.suit}`} src={`${card.img}`} alt="" />
   ))
 }
+
 export default () => {
   const [output, setOutput] = useState('')
   const [total, setTotal] = useState(0)
   const [cards, setCards] = useState({ player: [], dealer: [], deck: [] })
 
+  useEffect(() => {
+    const cardDeck = buildDeck()
+    cardDeck.forEach(card => {
+      // eslint-disable-next-line no-undef
+      const img = new Image()
+      img.src = card.src
+    })
+  }, [])
   const PlayerDeck = cards.player.map(card => (
     <img key={`${card.name}-${card.suit}`} src={`${card.img}`} alt="" />
   ))
@@ -25,8 +35,6 @@ export default () => {
   ))
   const playerScore = calculateScore(cards.player)
   const dealerScore = calculateScore(cards.dealer)
-  console.info('deck size', cards.deck.length)
-  console.log(cards)
   return (
     <main>
       <h1>Blackjack</h1>
