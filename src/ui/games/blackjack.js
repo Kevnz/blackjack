@@ -7,6 +7,7 @@ import {
   playerStand,
   calculateScore,
 } from '../engines/blackjack'
+import useCards from '../hooks/use-cards'
 const Deck = ({ hand }) => {
   console.log('hand', hand)
   return hand.map(card => (
@@ -32,19 +33,8 @@ export default () => {
   const [total, setTotal] = useState(0)
   const [cards, setCards] = useState({ player: [], dealer: [], deck: [] })
 
-  useEffect(() => {
-    const cardDeck = buildDeck()
-    cardDeck.forEach(card => {
-      const img = new Image()
-      img.src = card.src
-    })
-  }, [])
-  const PlayerDeck = cards.player.map(card => (
-    <img key={`${card.name}-${card.suit}`} src={`${card.img}`} alt="" />
-  ))
-  const DealerDeck = cards.dealer.map((card, i) => (
-    <img key={`${card.name}-${card.suit}-${i}`} src={`${card.img}`} alt="" />
-  ))
+  useCards(buildDeck())
+
   const playerScore = calculateScore(cards.player)
   const dealerScore = calculateScore(cards.dealer)
   return (
