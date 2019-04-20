@@ -1,0 +1,333 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The blackjack engine should build a suit of cards 1`] = `
+Array [
+  Object {
+    "img": "/assets/cardheartsa.png",
+    "name": "ace",
+    "suit": "hearts",
+    "val": 1,
+  },
+  Object {
+    "img": "/assets/cardhearts2.png",
+    "name": 2,
+    "suit": "hearts",
+    "val": 2,
+  },
+  Object {
+    "img": "/assets/cardhearts3.png",
+    "name": 3,
+    "suit": "hearts",
+    "val": 3,
+  },
+  Object {
+    "img": "/assets/cardhearts4.png",
+    "name": 4,
+    "suit": "hearts",
+    "val": 4,
+  },
+  Object {
+    "img": "/assets/cardhearts5.png",
+    "name": 5,
+    "suit": "hearts",
+    "val": 5,
+  },
+  Object {
+    "img": "/assets/cardhearts6.png",
+    "name": 6,
+    "suit": "hearts",
+    "val": 6,
+  },
+  Object {
+    "img": "/assets/cardhearts7.png",
+    "name": 7,
+    "suit": "hearts",
+    "val": 7,
+  },
+  Object {
+    "img": "/assets/cardhearts8.png",
+    "name": 8,
+    "suit": "hearts",
+    "val": 8,
+  },
+  Object {
+    "img": "/assets/cardhearts9.png",
+    "name": 9,
+    "suit": "hearts",
+    "val": 9,
+  },
+  Object {
+    "img": "/assets/cardhearts10.png",
+    "name": 10,
+    "suit": "hearts",
+    "val": 10,
+  },
+  Object {
+    "img": "/assets/cardheartsj.png",
+    "name": "jack",
+    "suit": "hearts",
+    "val": 11,
+  },
+  Object {
+    "img": "/assets/cardheartsq.png",
+    "name": "queen",
+    "suit": "hearts",
+    "val": 12,
+  },
+  Object {
+    "img": "/assets/cardheartsk.png",
+    "name": "king",
+    "suit": "hearts",
+    "val": 13,
+  },
+]
+`;
+
+exports[`The blackjack engine should build a suit of cards 2`] = `
+Array [
+  Object {
+    "img": "/assets/cardclubsa.png",
+    "name": "ace",
+    "suit": "clubs",
+    "val": 1,
+  },
+  Object {
+    "img": "/assets/cardclubs2.png",
+    "name": 2,
+    "suit": "clubs",
+    "val": 2,
+  },
+  Object {
+    "img": "/assets/cardclubs3.png",
+    "name": 3,
+    "suit": "clubs",
+    "val": 3,
+  },
+  Object {
+    "img": "/assets/cardclubs4.png",
+    "name": 4,
+    "suit": "clubs",
+    "val": 4,
+  },
+  Object {
+    "img": "/assets/cardclubs5.png",
+    "name": 5,
+    "suit": "clubs",
+    "val": 5,
+  },
+  Object {
+    "img": "/assets/cardclubs6.png",
+    "name": 6,
+    "suit": "clubs",
+    "val": 6,
+  },
+  Object {
+    "img": "/assets/cardclubs7.png",
+    "name": 7,
+    "suit": "clubs",
+    "val": 7,
+  },
+  Object {
+    "img": "/assets/cardclubs8.png",
+    "name": 8,
+    "suit": "clubs",
+    "val": 8,
+  },
+  Object {
+    "img": "/assets/cardclubs9.png",
+    "name": 9,
+    "suit": "clubs",
+    "val": 9,
+  },
+  Object {
+    "img": "/assets/cardclubs10.png",
+    "name": 10,
+    "suit": "clubs",
+    "val": 10,
+  },
+  Object {
+    "img": "/assets/cardclubsj.png",
+    "name": "jack",
+    "suit": "clubs",
+    "val": 11,
+  },
+  Object {
+    "img": "/assets/cardclubsq.png",
+    "name": "queen",
+    "suit": "clubs",
+    "val": 12,
+  },
+  Object {
+    "img": "/assets/cardclubsk.png",
+    "name": "king",
+    "suit": "clubs",
+    "val": 13,
+  },
+]
+`;
+
+exports[`The blackjack engine should build a suit of cards 3`] = `
+Array [
+  Object {
+    "img": "/assets/cardspadesa.png",
+    "name": "ace",
+    "suit": "spades",
+    "val": 1,
+  },
+  Object {
+    "img": "/assets/cardspades2.png",
+    "name": 2,
+    "suit": "spades",
+    "val": 2,
+  },
+  Object {
+    "img": "/assets/cardspades3.png",
+    "name": 3,
+    "suit": "spades",
+    "val": 3,
+  },
+  Object {
+    "img": "/assets/cardspades4.png",
+    "name": 4,
+    "suit": "spades",
+    "val": 4,
+  },
+  Object {
+    "img": "/assets/cardspades5.png",
+    "name": 5,
+    "suit": "spades",
+    "val": 5,
+  },
+  Object {
+    "img": "/assets/cardspades6.png",
+    "name": 6,
+    "suit": "spades",
+    "val": 6,
+  },
+  Object {
+    "img": "/assets/cardspades7.png",
+    "name": 7,
+    "suit": "spades",
+    "val": 7,
+  },
+  Object {
+    "img": "/assets/cardspades8.png",
+    "name": 8,
+    "suit": "spades",
+    "val": 8,
+  },
+  Object {
+    "img": "/assets/cardspades9.png",
+    "name": 9,
+    "suit": "spades",
+    "val": 9,
+  },
+  Object {
+    "img": "/assets/cardspades10.png",
+    "name": 10,
+    "suit": "spades",
+    "val": 10,
+  },
+  Object {
+    "img": "/assets/cardspadesj.png",
+    "name": "jack",
+    "suit": "spades",
+    "val": 11,
+  },
+  Object {
+    "img": "/assets/cardspadesq.png",
+    "name": "queen",
+    "suit": "spades",
+    "val": 12,
+  },
+  Object {
+    "img": "/assets/cardspadesk.png",
+    "name": "king",
+    "suit": "spades",
+    "val": 13,
+  },
+]
+`;
+
+exports[`The blackjack engine should build a suit of cards 4`] = `
+Array [
+  Object {
+    "img": "/assets/carddiamondsa.png",
+    "name": "ace",
+    "suit": "diamonds",
+    "val": 1,
+  },
+  Object {
+    "img": "/assets/carddiamonds2.png",
+    "name": 2,
+    "suit": "diamonds",
+    "val": 2,
+  },
+  Object {
+    "img": "/assets/carddiamonds3.png",
+    "name": 3,
+    "suit": "diamonds",
+    "val": 3,
+  },
+  Object {
+    "img": "/assets/carddiamonds4.png",
+    "name": 4,
+    "suit": "diamonds",
+    "val": 4,
+  },
+  Object {
+    "img": "/assets/carddiamonds5.png",
+    "name": 5,
+    "suit": "diamonds",
+    "val": 5,
+  },
+  Object {
+    "img": "/assets/carddiamonds6.png",
+    "name": 6,
+    "suit": "diamonds",
+    "val": 6,
+  },
+  Object {
+    "img": "/assets/carddiamonds7.png",
+    "name": 7,
+    "suit": "diamonds",
+    "val": 7,
+  },
+  Object {
+    "img": "/assets/carddiamonds8.png",
+    "name": 8,
+    "suit": "diamonds",
+    "val": 8,
+  },
+  Object {
+    "img": "/assets/carddiamonds9.png",
+    "name": 9,
+    "suit": "diamonds",
+    "val": 9,
+  },
+  Object {
+    "img": "/assets/carddiamonds10.png",
+    "name": 10,
+    "suit": "diamonds",
+    "val": 10,
+  },
+  Object {
+    "img": "/assets/carddiamondsj.png",
+    "name": "jack",
+    "suit": "diamonds",
+    "val": 11,
+  },
+  Object {
+    "img": "/assets/carddiamondsq.png",
+    "name": "queen",
+    "suit": "diamonds",
+    "val": 12,
+  },
+  Object {
+    "img": "/assets/carddiamondsk.png",
+    "name": "king",
+    "suit": "diamonds",
+    "val": 13,
+  },
+]
+`;
