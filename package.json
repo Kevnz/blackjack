@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "jest --config=jest.config.js --detectOpenHandles --forceExit --watch",
+    "test": "jest --config=jest.config.js  --detectOpenHandles --forceExit",
+    "test:watch": "jest --config=jest.config.js  --detectOpenHandles --forceExit --watchAll",
     "lint": "eslint ./src",
     "watch": "npm-run-all --parallel dev:**",
     "build": "webpack --config ./src/webpack/prod.config.js --mode production",
