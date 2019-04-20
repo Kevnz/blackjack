@@ -11,7 +11,7 @@ const prodConfig = {
     }),
     new CopyPlugin([
       {
-        from: path.join(process.cwd(), '/src/public'),
+        from: path.join(process.cwd(), '/public'),
         to: path.join(process.cwd(), '/dist'),
       },
     ]),
