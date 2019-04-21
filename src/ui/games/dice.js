@@ -3,10 +3,10 @@ import { Button } from 'react-form-elements'
 import { TYPES, getDice, roll } from '../engines/dice'
 import './dice.css'
 
-const Dice = ({ dice = [] }) => {
+const Dice = ({ dice = [], total }) => {
   console.log('dice', dice)
   return dice.map((d, i) => (
-    <div className="die" key={`${d}-${i}`}>
+    <div className="die" key={`total-${total}-${d}-${i}`}>
       {d}
     </div>
   ))
@@ -22,6 +22,7 @@ const GAME_STATE = {
 
 export default () => {
   const [total, setTotal] = useState(0)
+  const [totalRoles, setTotalRoles] = useState(0)
   const [winnings, setWinnings] = useState(100)
   const [winner, setWinner] = useState('')
   const [roleResult, setRoleResult] = useState({ rolled: [], total: 0 })
@@ -46,13 +47,14 @@ export default () => {
         </div>
         <div>
           <h4>House</h4>
-          <Dice dice={dealerDice} />
+          <Dice dice={dealerDice} total={totalRoles} />
         </div>
         <div>
           <h4>You</h4>
-          <Dice dice={playerDice} />
+          <Dice dice={playerDice} total={totalRoles} />
         </div>
         <Button
+          disabled={winnings <= 0}
           onClick={e => {
             e.preventDefault()
 
@@ -71,6 +73,7 @@ export default () => {
               setWinnings(winnings - 10)
             }
             setWinner(winner)
+            setTotalRoles(totalRoles + 1)
           }}
         >
           Roll
