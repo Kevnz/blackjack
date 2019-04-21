@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The blackjack engine should build a suit of cards 1`] = `
+exports[`The base card engine should build a suit of cards 1`] = `
 Array [
   Object {
     "img": "/assets/cardheartsa.png",
@@ -83,7 +83,7 @@ Array [
 ]
 `;
 
-exports[`The blackjack engine should build a suit of cards 2`] = `
+exports[`The base card engine should build a suit of cards 2`] = `
 Array [
   Object {
     "img": "/assets/cardclubsa.png",
@@ -166,7 +166,7 @@ Array [
 ]
 `;
 
-exports[`The blackjack engine should build a suit of cards 3`] = `
+exports[`The base card engine should build a suit of cards 3`] = `
 Array [
   Object {
     "img": "/assets/cardspadesa.png",
@@ -249,7 +249,7 @@ Array [
 ]
 `;
 
-exports[`The blackjack engine should build a suit of cards 4`] = `
+exports[`The base card engine should build a suit of cards 4`] = `
 Array [
   Object {
     "img": "/assets/carddiamondsa.png",
