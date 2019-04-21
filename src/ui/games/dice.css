@@ -7,18 +7,15 @@
   vertical-align: middle;
   padding: 10px;
   margin: 10px;
-  animation:  kick 0.4s, roll 0.4s;
+  animation: roll 0.4s ;
 }
 
 @keyframes roll {
   0% {
     transform:  rotate(359deg);
   }
-  33% {
-    transform:  rotate(0deg);
-  }
-  66% {
-    transform:  rotate(359deg);
+  90% {
+    transform:  rotate(20deg);
   }
   100% {
     transform:  rotate(0deg);

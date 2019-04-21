@@ -51,104 +51,106 @@ export default () => {
         <div>
           <Deck hand={cards.player} />
         </div>
-        <Button
-          onClick={e => {
-            e.preventDefault()
+        <div className="controls">
+          <Button
+            onClick={e => {
+              e.preventDefault()
 
-            const { dealer, player, deck } = dealTheCardsOut()
+              const { dealer, player, deck } = dealTheCardsOut()
 
-            setCards({
-              dealer,
-              player,
-              deck,
-            })
-            setGameState(GAME_STATE.DEALT)
-            setOutput('')
-          }}
-        >
-          Shuffle
-        </Button>
-        <Button
-          disabled={cards.deck.length < 10}
-          onClick={e => {
-            e.preventDefault()
+              setCards({
+                dealer,
+                player,
+                deck,
+              })
+              setGameState(GAME_STATE.DEALT)
+              setOutput('')
+            }}
+          >
+            Shuffle
+          </Button>
+          <Button
+            disabled={cards.deck.length < 10}
+            onClick={e => {
+              e.preventDefault()
 
-            const { dealer, player, deck } = dealTheCardsOut(cards.deck)
+              const { dealer, player, deck } = dealTheCardsOut(cards.deck)
 
-            setCards({
-              dealer,
-              player,
-              deck,
-            })
-            setOutput('Cards have been dealt')
-            setGameState(GAME_STATE.DEALT)
-          }}
-        >
-          Deal
-        </Button>
-        <Button
-          disabled={
-            gameState === GAME_STATE.PLAYER_STAND ||
-            gameState === GAME_STATE.PLAYER_BUSTED ||
-            gameState === GAME_STATE.PUSH ||
-            gameState === GAME_STATE.DONE ||
-            playerScore >= 21 ||
-            cards.deck.length === 0
-          }
-          onClick={e => {
-            e.preventDefault()
-            const { hand, score, deck } = handleHit(cards.player, cards.deck)
-            console.log('score', score)
-
-            setCards({
-              dealer: cards.dealer,
-              player: hand,
-              deck,
-            })
-            if (score > 21) {
-              setOutput('busted')
-              setGameState(GAME_STATE.DONE)
+              setCards({
+                dealer,
+                player,
+                deck,
+              })
+              setOutput('Cards have been dealt')
+              setGameState(GAME_STATE.DEALT)
+            }}
+          >
+            Deal
+          </Button>
+          <Button
+            disabled={
+              gameState === GAME_STATE.PLAYER_STAND ||
+              gameState === GAME_STATE.PLAYER_BUSTED ||
+              gameState === GAME_STATE.PUSH ||
+              gameState === GAME_STATE.DONE ||
+              playerScore >= 21 ||
+              cards.deck.length === 0
             }
-          }}
-        >
-          {' '}
-          Hit Me!{' '}
-        </Button>
-        <Button
-          disabled={
-            gameState === GAME_STATE.PLAYER_STAND ||
-            cards.deck.length === 0 ||
-            gameState === GAME_STATE.DONE
-          }
-          onClick={e => {
-            e.preventDefault()
-            console.info('cards', cards)
-            const { dealer, player, deck, reason, winner } = playerStand(
-              cards.player,
-              cards.dealer,
-              cards.deck
-            )
-            console.info({ dealer, player, deck, reason })
-            setCards({
-              dealer,
-              player,
-              deck,
-            })
-            console.log('set out', reason)
-            if (winner === 'player') {
-              setGameState(GAME_STATE.DONE)
-              setTotal(total + 1)
-            } else if (winner === 'dealer') {
-              setGameState(GAME_STATE.DONE)
-            } else {
-              setGameState(GAME_STATE.DONE)
+            onClick={e => {
+              e.preventDefault()
+              const { hand, score, deck } = handleHit(cards.player, cards.deck)
+              console.log('score', score)
+
+              setCards({
+                dealer: cards.dealer,
+                player: hand,
+                deck,
+              })
+              if (score > 21) {
+                setOutput('busted')
+                setGameState(GAME_STATE.DONE)
+              }
+            }}
+          >
+            {' '}
+            Hit Me!{' '}
+          </Button>
+          <Button
+            disabled={
+              gameState === GAME_STATE.PLAYER_STAND ||
+              cards.deck.length === 0 ||
+              gameState === GAME_STATE.DONE
             }
-            setOutput(reason)
-          }}
-        >
-          {' '}
-          Stand!{' '}
-        </Button>
+            onClick={e => {
+              e.preventDefault()
+              console.info('cards', cards)
+              const { dealer, player, deck, reason, winner } = playerStand(
+                cards.player,
+                cards.dealer,
+                cards.deck
+              )
+              console.info({ dealer, player, deck, reason })
+              setCards({
+                dealer,
+                player,
+                deck,
+              })
+              console.log('set out', reason)
+              if (winner === 'player') {
+                setGameState(GAME_STATE.DONE)
+                setTotal(total + 1)
+              } else if (winner === 'dealer') {
+                setGameState(GAME_STATE.DONE)
+              } else {
+                setGameState(GAME_STATE.DONE)
+              }
+              setOutput(reason)
+            }}
+          >
+            {' '}
+            Stand!{' '}
+          </Button>
+        </div>
         <div>Total Wins {total}</div>
       </div>
     </main>

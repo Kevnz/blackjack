@@ -53,32 +53,34 @@ export default () => {
           <h4>You</h4>
           <Dice dice={playerDice} total={totalRoles} />
         </div>
-        <Button
-          disabled={winnings <= 0}
-          onClick={e => {
-            e.preventDefault()
+        <div className="controls">
+          <Button
+            disabled={winnings <= 0}
+            onClick={e => {
+              e.preventDefault()
 
-            const dice = getDice()
+              const dice = getDice()
 
-            const result = roll(dice)
+              const result = roll(dice)
 
-            setRoleResult(result)
-            const otherResult = roll(dice)
-            setOpponentRoleResult(otherResult)
-            const winner = result.total > otherResult.total ? 'player' : 'house'
-            if (winner === 'player') {
-              setTotal(total + 1)
-              setWinnings(winnings + 10)
-            } else {
-              setWinnings(winnings - 10)
-            }
-            setWinner(winner)
-            setTotalRoles(totalRoles + 1)
-          }}
-        >
-          Roll
-        </Button>
-
+              setRoleResult(result)
+              const otherResult = roll(dice)
+              setOpponentRoleResult(otherResult)
+              const winner =
+                result.total > otherResult.total ? 'player' : 'house'
+              if (winner === 'player') {
+                setTotal(total + 1)
+                setWinnings(winnings + 10)
+              } else {
+                setWinnings(winnings - 10)
+              }
+              setWinner(winner)
+              setTotalRoles(totalRoles + 1)
+            }}
+          >
+            Roll
+          </Button>
+        </div>
         <div>Total Wins {total}</div>
         <div>Current Money {winnings}</div>
       </div>
