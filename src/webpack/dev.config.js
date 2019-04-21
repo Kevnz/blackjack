@@ -11,6 +11,7 @@ const devConfig = {
     }),
   ],
   devServer: {
+    historyApiFallback: true,
     contentBase: './public',
     hot: false,
   },
