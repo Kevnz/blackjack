@@ -34,7 +34,7 @@ export function getDice(quantity = 2, type = TYPES.SIX_SIDED) {
 }
 
 export function roll(dice) {
-  const roled = dice.bones.map(d => random(1, MAX_VAL[dice.type]))
-  const total = roled.reduce((total, current) => total + current, 0)
-  return { roled, total }
+  const rolled = dice.bones.map(d => random(1, MAX_VAL[dice.type]))
+  const total = rolled.reduce((total, current) => total + current, 0)
+  return { rolled, total }
 }
