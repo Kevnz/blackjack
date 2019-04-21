@@ -1,0 +1,10 @@
+.die {
+  display: inline-block;
+  font-size: 36px;
+  min-width: 80px;
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+  margin: 10px;
+}
