@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Button } from 'react-form-elements'
+
+import { Button, Section, Title, Buttons } from '@brightleaf/elements'
 import { buildDeck } from '../engines/cards'
 import {
   dealTheCardsOut,
@@ -38,11 +39,12 @@ export default () => {
   const playerScore = calculateScore(cards.player)
   const dealerScore = calculateScore(cards.dealer)
   return (
-    <main>
-      <h1>Blackjack</h1>
+    <Section>
+      <Title size="1">Blackjack</Title>
       <div>
         <div>
-          You: {playerScore} vs Dealer: {dealerScore}
+          You: <strong>{playerScore}</strong> vs Dealer:{' '}
+          <strong>{dealerScore}</strong>
         </div>
         <div>{output}</div>
         <div>
@@ -51,7 +53,8 @@ export default () => {
         <div>
           <Deck hand={cards.player} />
         </div>
-        <div className="controls">
+        <hr />
+        <Buttons hasAddons areLarge>
           <Button
             onClick={e => {
               e.preventDefault()
@@ -150,9 +153,11 @@ export default () => {
             {' '}
             Stand!{' '}
           </Button>
+        </Buttons>
+        <div>
+          Total Wins: <strong>{total}</strong>
         </div>
-        <div>Total Wins {total}</div>
       </div>
-    </main>
+    </Section>
   )
 }
