@@ -1,14 +1,15 @@
 import React from 'react'
 import { Link } from '@reach/router'
+import { TabList, TabItem, Section } from '@brightleaf/elements'
 export default () => (
-  <main>
-    <ul>
-      <li>
+  <Section>
+    <TabList>
+      <TabItem>
         <Link to="/blackjack">Blackjack</Link>
-      </li>
+      </TabItem>
       <li>
         <Link to="/dice">Dice</Link>
       </li>
-    </ul>
-  </main>
+    </TabList>
+  </Section>
 )
