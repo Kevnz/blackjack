@@ -7,11 +7,43 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="cleartype" content="on">
-  <link rel='stylesheet' href='/css/style.css' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
 </head>
 
 <body>
-  <div id="root" class="container"></div>
+  <span id="root"></span>
+
+  <script>
+    /*
+    const setupWS = () => {
+      console.info('setup WS')
+      let ws = new WebSocket('ws://localhost:4567')
+      console.log('WebSocket')
+      ws.onopen = () => {
+        console.log('Websocket connected')
+      }
+
+      ws.onmessage = evt => {
+        console.log('message', evt)
+      }
+      ws.onerror = evt => {
+        console.log('error', evt)
+
+      }
+      ws.onclose = () => {
+        console.log('Websocket closed')
+        setTimeout(() => {
+          ws = setupWS()
+        })
+      }
+      return ws
+    }
+    setTimeout(() => {
+      let ws = new WebSocket('ws://localhost:4567')
+      console.log('WebSocket')
+    }, 4000)
+    */
+  </script>
 </body>
 
 </html>
