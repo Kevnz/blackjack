@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button } from 'react-form-elements'
+import { Button, Section, Title, Buttons } from '@brightleaf/elements'
 import { TYPES, getDice, roll } from '../engines/dice'
 import './dice.css'
 
@@ -36,8 +36,8 @@ export default () => {
   const dealerDice = opponentRoleResult.rolled
 
   return (
-    <main>
-      <h1>Dice</h1>
+    <Section>
+      <Title as="h1">Dice</Title>
       <div>
         <div>
           You: {playerScore} vs Dealer: {dealerScore}
@@ -53,8 +53,11 @@ export default () => {
           <h4>You</h4>
           <Dice dice={playerDice} total={totalRoles} />
         </div>
-        <div className="controls">
+        <br />
+        <hr />
+        <Buttons className="controls">
           <Button
+            isPrimary
             disabled={winnings <= 0}
             onClick={e => {
               e.preventDefault()
@@ -80,10 +83,10 @@ export default () => {
           >
             Roll
           </Button>
-        </div>
+        </Buttons>
         <div>Total Wins {total}</div>
         <div>Current Money {winnings}</div>
       </div>
-    </main>
+    </Section>
   )
 }
