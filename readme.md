@@ -1,15 +1,3 @@
-# My Custom App
+# Games
 
-```
-- docker
-- src
--- server
---- models
---- public
---- routes
--- ui
---- core
---- features
-
-```
-
+Playing games
