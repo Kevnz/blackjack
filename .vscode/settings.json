@@ -1,4 +1,14 @@
 {
+  "carbon.backgroundColor": "rgba(0,0,0,0)",
+  "carbon.theme": "night-owl",
+  "carbon.dropShadow": true,
+  "carbon.windowControls": true,
+  "carbon.autoAdjustWidth": true,
+  "carbon.paddingVertical": 24,
+  "carbon.paddingHorizontal": 16,
+  "carbon.lineNumbers": false,
+  "carbon.fontFamily": "Hack",
+  "carbon.fontSize": 13,
   "eslint.autoFixOnSave": true,
   "editor.formatOnSave": true,
   "[javascript]": {
