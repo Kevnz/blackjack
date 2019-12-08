@@ -1,0 +1,58 @@
+{
+  "start": {
+    "deck": [],
+    "player": [],
+    "dealer": [],
+    "pot": 0
+  },
+  "betting": {
+    "deck": [],
+    "player": [],
+    "dealer": [],
+    "pot": "?"
+  },
+  "shuffle": {
+    "deck": [
+      52
+    ],
+    "player": [],
+    "dealer": [],
+    "pot": "?"
+  },
+  "deal": {
+    "deck": [
+      48
+    ],
+    "player": [
+      2
+    ],
+    "dealer": [
+      2
+    ],
+    "pot": "?"
+  },
+  "hit": {
+    "deck": [
+      "less than 48"
+    ],
+    "player": [
+      "2+"
+    ],
+    "dealer": [
+      2
+    ],
+    "pot": "?"
+  },
+  "stand": {
+    "deck": [
+      "less than 48"
+    ],
+    "player": [
+      "2+"
+    ],
+    "dealer": [
+      "2+"
+    ],
+    "pot": "?"
+  }
+}
